@@ -1,0 +1,47 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  width: 100%;
+}
+
+section {
+  width: 80%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: inherit;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+textarea {
+  background-color: inherit;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  border-top-width: 0em;
+  border-right-width: 0em;
+  border-left-width: 0em;
+  border-color: black;
+}
+
+button {
+  font-family: 'Bungee', sans-serif;
+  border-width: 0px;
+  background-color: #2e2e2e;
+  color: lime;
+  /* box-sizing: border-box; */
+  padding: 8px;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
