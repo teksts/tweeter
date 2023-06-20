@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  height: 120px;
+  width: 100vw;
+  padding: 0;
+  margin: 0 auto;
+  background-color: #2e2e2e;
+  color: lime;
+}
+
+nav span {
+  font-family: 'Bungee', sans-serif;
+  font-size: 56px;
+  margin-left: 1.5em;
+}
+
+nav div {
+  font-size: 32px;
+  margin-right: 1.5em;
+  text-align: center;
+}
+
+.nav-right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
