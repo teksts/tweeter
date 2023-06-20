@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-feed.css" type="text/css" />
 
     
     <!-- EXTERNAL JS -->
@@ -45,7 +46,7 @@
       </div>
     </nav>
 
-    <header>
+    <header id="profile">
       <div>
           <img #pfp src="/images/profile-hex.png"></img>
       </div>
@@ -56,6 +57,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <section class="new-tweet">
         <form action="/tweets" method="POST">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
@@ -65,10 +67,26 @@
           </div>
         </form>
       </section>
+
       <article class="tweet">
-        <header></header>
-        <footer></footer>
+        <header>
+          <div class="display-name">
+            <span><i class="fa-solid fa-otter fa-2xl"></i></span>
+            <span>Rhonda Jacobs</span>
+          </div>
+          <div class="handle">@MrsJacobs</div>
+        </header>
+        <div class="tweet-body">Hello world!</div>
+        <footer>
+          <div class="date">10 days ago</div>
+          <div class="tweet-actions">
+            <div class="flag">F</div>
+            <div class="retweet">R</div>
+            <div class="like">L</div>
+          </div>
+        </footer>
       </article>
+
     </main>
   </body>
 </html>
