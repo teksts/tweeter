@@ -10,6 +10,10 @@ article {
   border-style: solid;
 }
 
+article:hover {
+  box-shadow: 5px 5px hsl(286, 23%, 82%);
+}
+
 article.tweet header {
   display: flex;
   justify-content: space-between;
@@ -23,7 +27,8 @@ article.tweet footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: inherit;
 }
 
@@ -42,6 +47,10 @@ div.display-name span {
 
 div.handle {
   padding-right: 10px;
+}
+
+footer div {
+  font-size: 16px;
 }
 
 .tweet-body {
