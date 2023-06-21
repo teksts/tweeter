@@ -46,8 +46,12 @@ article.tweet footer div {
   padding-right: 10px;
 }
 
-div.tweet-actions {
+div.tweet-action-cluster {
   display: flex;
+}
+
+div.tweet-action:hover {
+  color: limegreen;
 }
 
 div.tweeter-info {

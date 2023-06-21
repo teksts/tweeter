@@ -24,7 +24,7 @@ $(document).ready(function() {
     const $header = $(`<header>${$tweeterInfo}${$handle}</header>`).prop("outerHTML");
     const $body = $(`<div class="tweet-body">${tweet["content"]["text"]}</div>`).prop("outerHTML");
     const $timestamp = $(`<div class="date">${getTimePassed(tweet["created_at"])}</div>`).prop("outerHTML");
-    const $actions = $(`<div class="tweet-actions"><div class="flag"><i class="fa-solid fa-flag"></i></div><div class="retweet"><i class="fa-solid fa-retweet"></i></div><div class="like"><i class="fa-solid fa-heart"></i></div></div>`).prop("outerHTML");
+    const $actions = $(`<div class="tweet-action-cluster"><div class="tweet-action"><i class="fa-solid fa-flag"></i></div><div class="tweet-action"><i class="fa-solid fa-retweet"></i></div><div class="tweet-action"><i class="fa-solid fa-heart"></i></div></div>`).prop("outerHTML");
     const $footer = $(`<footer>${$timestamp}${$actions}</footer>`).prop("outerHTML");
     const $tweet = $(`<article class="tweet">${$header}${$body}${$footer}</article>`);
     return $tweet;
