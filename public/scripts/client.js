@@ -17,10 +17,27 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  const createErrorElement = function() {
+    const $errorSymbol = $(`<div class="error-symbol"><i class="fa-solid fa-skull-crossbones fa-xl"></i></div>`).prop("outerHTML");
+    const $errorTitle = $(`<div class="error-msg-title">HOLD ON SAILOR!</div>`).prop("outerHTML");
+    const $errorBody = $(`<div class="error-msg-body"></div>`).prop("outerHTML");
+    const $errorMsg = $(`<div class="error-msg">${$errorTitle}${$errorBody}</div>`).prop("outerHTML");
+    const $errorPopup = $(`<section class="invalid-tweet-error">${$errorSymbol}${$errorMsg}${$errorSymbol}</section>`);
+    $("main").prepend($errorPopup);
+  }
+
+  const renderError = function(msg) {
+    $errorPopup = $(".invalid-tweet-error");
+    console.log($errorPopup)
+    $errorBody = $(".error-msg-body");
+    console.log($errorBody.prop("outerHTML"));
+    $errorBody.html(msg);
+    $errorPopup.slideDown();
+  };
+
   const renderTweets = function (tweetDB) {
     for (const tweet of tweetDB.reverse()) {
       const $tweet = createTweetElement(tweet);
-      console.log($tweet);
       $('#tweets-container').append($tweet);
     }
   };
@@ -35,6 +52,8 @@ $(document).ready(function() {
     })
   };
 
+  createErrorElement();
+
   $("form").on("submit", function (event) {
     event.preventDefault();
     const data = $(this).serialize();
@@ -42,11 +61,16 @@ $(document).ready(function() {
     const overLimit = $(this).children("div")
       .children(".counter")
       .data("overLimit");
-
+    const $errorPopup = $(this).parents("main").children(".invalid-tweet-error")
+    const emptyTweetMsg = "You forgot to write something!";
+    const overLimitMsg = "Too wordy! Tweets have to be 140 characters or less.";
+    if ($errorPopup.css("display") !== "none") {
+      $errorPopup.slideUp();
+    }
     if (!formContent) {
-      alert("Hold up, sailor, you forgot to write something!");
+      renderError(emptyTweetMsg);
     } else if (overLimit) {
-      alert("Too wordy, sailor! Tweets have to be 140 characters or less.");
+      renderError(overLimitMsg);
     } else {
       $.ajax({
         method: "POST",

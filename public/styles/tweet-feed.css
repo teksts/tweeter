@@ -92,3 +92,34 @@ footer div {
   border-color: #2e2e2e;
 }
 
+section.invalid-tweet-error {
+  display: flex;
+  justify-content: space-around;
+  border-color: gold; 
+  border-style: dashed;
+  border-width: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+  display: none;
+}
+
+div.error-msg {
+  display: flex;
+  flex-direction: column;
+}
+
+div.error-msg-title {
+  font-family: 'Bungee', sans-serif;
+  align-self: center;
+  padding-bottom: 10px;
+}
+
+div.error-msg-body {
+  align-self: center;
+}
+
+div.error-symbol {
+  align-self: center;
+}
