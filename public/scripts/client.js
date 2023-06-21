@@ -51,21 +51,23 @@ $(document).ready(function() {
   $("form").on("submit", function (event) {
     event.preventDefault();
     const data = $(this).serialize();
-    const formContent = data.slice(5);
+    const formContent = $(this).children("#tweet-text").val();
+    const overLimit = $(this).children("div")
+      .children(".counter")
+      .data("overLimit");
+
     if (!formContent) {
       alert("Hold up, sailor, you forgot to write something!");
-    } else if ($(".counter").data("overLimit")) {
+    } else if (overLimit) {
       alert("Too wordy, sailor! Tweets have to be 140 characters or less.");
     } else {
-      console.log(data);
       $.ajax({
         method: "POST",
         url: "/tweets",
         data
       })
         .then(() => {
-          console.log("AJAX post fired!");
-          console.log("Data sent:", data);
+          this.reset();
           loadTweets();
         });
     }
