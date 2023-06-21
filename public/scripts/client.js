@@ -34,6 +34,16 @@ $(document).ready(function() {
     }
   };
 
+  const loadTweets = function () {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+    })
+    .then((tweetDb) => {
+      renderTweets(tweetDb);
+    })
+  };
+
   $("form").on("submit", function (event) {
     event.preventDefault();
     $.ajax({
@@ -44,6 +54,7 @@ $(document).ready(function() {
     .then(() => {
       console.log("AJAX post fired!");
       console.log("Data sent:", $(this).serialize());
+      loadTweets();
     });
   });
 
