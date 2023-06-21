@@ -1,17 +1,20 @@
 $(document).ready(function() {
-  const temporaryTestData =  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  };
+  const temporaryTestData =  [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png",
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
+    }
+  ];
 
   const createTweetElement = function(tweet) {
+    // Build tweeter info in header
     const $tweeterInfo = $(`<div class="tweeter-info"><div><img src="${tweet["user"]["avatars"]}"></img></div><div class="tweeter-name">${tweet["user"]["name"]}</div></div>`).prop("outerHTML");
     const $handle = $(`<div class="handle">${tweet["user"]["handle"]}</div>`).prop("outerHTML");
     const $header = $(`<header>${$tweeterInfo}${$handle}</header>`).prop("outerHTML");
@@ -23,11 +26,16 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  const $tweet = createTweetElement(temporaryTestData);
+  const renderTweets = function (tweetDB) {
+    for (const tweet of tweetDB) {
+      const $tweet = createTweetElement(tweet);
+      console.log($tweet);
+      $('#tweets-container').append($tweet);
+    }
+  };
 
   // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
-  $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  renderTweets(temporaryTestData);
 });
 
 
