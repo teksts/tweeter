@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $("textarea").on("input", function(event) {
-    console.log($(this).siblings("div")
-                        .children(".counter").val(140 - $(this).val().length));
+    $(this).siblings("div")
+            .children(".counter").val(140 - $(this).val().length);
   });
 });

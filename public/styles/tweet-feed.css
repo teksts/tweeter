@@ -41,12 +41,24 @@ div.tweet-actions {
   display: flex;
 }
 
-div.display-name span {
-  padding: 10px;
+div.tweeter-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+div.tweeter-info div {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+div.tweeter-name {
+  align-self: center;
 }
 
 div.handle {
   padding-right: 10px;
+  align-self: center;
 }
 
 footer div {
