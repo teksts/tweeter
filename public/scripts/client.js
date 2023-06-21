@@ -50,16 +50,25 @@ $(document).ready(function() {
 
   $("form").on("submit", function (event) {
     event.preventDefault();
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: $(this).serialize()
-    })
-    .then(() => {
-      console.log("AJAX post fired!");
-      console.log("Data sent:", $(this).serialize());
-      loadTweets();
-    });
+    const data = $(this).serialize();
+    const formContent = data.slice(5);
+    if (!formContent) {
+      alert("Hold up, sailor, you forgot to write something!");
+    } else if ($(".counter").data("overLimit")) {
+      alert("Too wordy, sailor! Tweets have to be 140 characters or less.");
+    } else {
+      console.log(data);
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data
+      })
+        .then(() => {
+          console.log("AJAX post fired!");
+          console.log("Data sent:", data);
+          loadTweets();
+        });
+    }
   });
 
   // Test / driver code (temporary)
