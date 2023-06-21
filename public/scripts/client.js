@@ -34,6 +34,19 @@ $(document).ready(function() {
     }
   };
 
+  $("form").on("submit", function (event) {
+    event.preventDefault();
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(this).serialize()
+    })
+    .then(() => {
+      console.log("AJAX post fired!");
+      console.log("Data sent:", $(this).serialize());
+    });
+  });
+
   // Test / driver code (temporary)
   renderTweets(temporaryTestData);
 });
