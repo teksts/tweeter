@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const temporaryTestData =  [
+  const temporaryTestData = [
     {
       "user": {
         "name": "Newton",

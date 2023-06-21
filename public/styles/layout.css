@@ -24,10 +24,16 @@ body {
 }
 
 main {
-  width: 90%;
+  width: 100%;
   align-self: center;
   background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
 }
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

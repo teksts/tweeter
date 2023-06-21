@@ -1,7 +1,16 @@
-article {
+#tweets-container {
   display: flex;
   flex-direction: column;
   width: 80%;
+  background-color: inherit;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   background-color: inherit;
   margin-top: 20px;
   padding: 10px;
@@ -11,7 +20,7 @@ article {
 }
 
 article:hover {
-  box-shadow: 5px 5px hsl(286, 23%, 82%);
+  box-shadow: 5px 5px hsl(100, 23%, 82%);
 }
 
 article.tweet header {
