@@ -13,13 +13,17 @@ $(document).ready(function() {
     }
   ];
 
+  const getTimePassed = function (timestamp) {
+    return timeago.format(timestamp);
+  };
+
   const createTweetElement = function(tweet) {
     // Build tweeter info in header
     const $tweeterInfo = $(`<div class="tweeter-info"><div><img src="${tweet["user"]["avatars"]}"></img></div><div class="tweeter-name">${tweet["user"]["name"]}</div></div>`).prop("outerHTML");
     const $handle = $(`<div class="handle">${tweet["user"]["handle"]}</div>`).prop("outerHTML");
     const $header = $(`<header>${$tweeterInfo}${$handle}</header>`).prop("outerHTML");
     const $body = $(`<div class="tweet-body">${tweet["content"]["text"]}</div>`).prop("outerHTML");
-    const $timestamp = $(`<div class="date">${tweet["created_at"]}</div>`).prop("outerHTML");
+    const $timestamp = $(`<div class="date">${getTimePassed(tweet["created_at"])}</div>`).prop("outerHTML");
     const $actions = $(`<div class="tweet-actions"><div class="flag"><i class="fa-solid fa-flag"></i></div><div class="retweet"><i class="fa-solid fa-retweet"></i></div><div class="like"><i class="fa-solid fa-heart"></i></div></div>`).prop("outerHTML");
     const $footer = $(`<footer>${$timestamp}${$actions}</footer>`).prop("outerHTML");
     const $tweet = $(`<article class="tweet">${$header}${$body}${$footer}</article>`);
