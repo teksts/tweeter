@@ -5,6 +5,7 @@ section.new-tweet {
   border-radius: 10px;
   border-color: black;
   padding: 10px;
+  display: none;
 }
 
 form {

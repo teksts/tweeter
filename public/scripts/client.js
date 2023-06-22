@@ -28,11 +28,11 @@ $(document).ready(function() {
 
   const renderError = function(msg) {
     $errorPopup = $(".invalid-tweet-error");
-    console.log($errorPopup)
     $errorBody = $(".error-msg-body");
-    console.log($errorBody.prop("outerHTML"));
     $errorBody.html(msg);
-    $errorPopup.slideDown();
+    $errorPopup.slideDown("slow", function () {
+      $(this).css("display", "flex");
+    });
   };
 
   const renderTweets = function (tweetDB) {
@@ -53,6 +53,30 @@ $(document).ready(function() {
   };
 
   createErrorElement();
+
+  // set flag for initial section state
+  $(".new-tweet").data("collapsed", true);
+
+  // on-click handler for new-tweet expansion
+  $(".nav-right-side").on("click", function () {
+    // initialize target DOM elements
+    const $newTweetSection = $(this).parents("body").children("main").children(".new-tweet");
+    console.log($($newTweetSection).children().children("textarea"));
+    const $newTweetTextArea = $($newTweetSection).children().children("textarea");
+    // if collapsed, expanded and adjust flag
+    if ($newTweetSection.data("collapsed")) {
+      $($newTweetSection).slideDown("slow", function () {
+        $newTweetSection.data("collapsed", false);
+        $($newTweetTextArea).focus();
+      });
+    }
+    // if expanded, collapse and adjust flag
+    else {
+      $($newTweetSection).slideUp("slow", function () {
+        $newTweetSection.data("collapsed", true);
+      });
+    }
+  });
 
   $("form").on("submit", function (event) {
     event.preventDefault();
