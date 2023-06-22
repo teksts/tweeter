@@ -123,3 +123,10 @@ div.error-msg-body {
 div.error-symbol {
   align-self: center;
 }
+
+@media only screen and (min-width: 1024px) {
+  #tweets-container {
+  }
+  section.invalid-tweet-error {
+  }
+}
