@@ -12,13 +12,13 @@ nav {
 nav span {
   font-family: 'Bungee', sans-serif;
   font-size: 56px;
-  margin-left: 1.5em;
+  margin-left: 1em;
   color: lime
 }
 
 nav div {
   font-size: 32px;
-  margin-right: 1.5em;
+  margin-right: 1em;
   text-align: center;
 }
 
