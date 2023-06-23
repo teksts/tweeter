@@ -1,3 +1,4 @@
+/* Default styles (mobile, tablet) */
 #profile {
   padding-top: 120px;
   width: 100%;
@@ -7,9 +8,10 @@
   color: lime;
   background-color: #202c2e;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */}
+}
 
-  @media only screen and (min-width: 1024px) {
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
     #profile {
       padding-top: 40px;
       align-self: flex-start;

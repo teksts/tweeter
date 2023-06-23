@@ -1,3 +1,4 @@
+/* Default styles (mobile, tablet) */
 section.new-tweet {
   width: 85%;
   border-style: outset;
@@ -38,7 +39,6 @@ button {
   border-width: 0px;
   background-color: #2e2e2e;
   color: lime;
-  /* box-sizing: border-box; */
   padding: 8px;
 }
 
@@ -46,6 +46,7 @@ button {
   font-family: 'Bungee', sans-serif;
 }
 
+/* Desktop styles */
 @media only screen and (min-width: 1024px) {
   section.new-tweet {
   }

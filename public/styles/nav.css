@@ -1,3 +1,4 @@
+/* Default styles (mobile, tablet) */
 nav {
   display: flex;
   align-items: center;
@@ -34,7 +35,7 @@ nav div {
   cursor: pointer;
 }  
 
-
+/* Desktop styles */
 @media only screen and (min-width: 1024px) {
   nav {
     background-color: #2e2e2e;
