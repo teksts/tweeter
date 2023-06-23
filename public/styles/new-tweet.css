@@ -47,5 +47,6 @@ button {
 }
 
 @media only screen and (min-width: 1024px) {
-  
+  section.new-tweet {
+  }
 }

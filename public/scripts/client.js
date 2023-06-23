@@ -36,6 +36,7 @@ $(document).ready(function() {
   };
 
   const renderTweets = function (tweetDB) {
+    // $("main").css("margin-top", "180px");
     for (const tweet of tweetDB.reverse()) {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').append($tweet);
@@ -53,6 +54,8 @@ $(document).ready(function() {
   };
 
   createErrorElement();
+
+  $(".new-tweet").data("clicked", false);
 
   // set flag for initial section state
   $(".new-tweet").data("collapsed", true);
@@ -101,9 +104,9 @@ $(document).ready(function() {
         url: "/tweets",
         data
       })
-        .then(() => {
-          this.reset();
-          loadTweets();
+      .then(() => {
+        this.reset();
+        loadTweets();
         });
     }
   });

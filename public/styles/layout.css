@@ -25,11 +25,9 @@ body {
 
 main {
   width: 100%;
-  align-self: center;
   background-color: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   padding-top: 20px;
 }
@@ -43,5 +41,10 @@ main {
     flex-direction: row;
     padding-top: 0px;
     align-content: center;
+    justify-content: space-around;
+  }
+
+  main {
+    margin-top: 180px;
   }
 }
