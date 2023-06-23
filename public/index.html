@@ -41,10 +41,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="nav-right-side">
-        <div>Write a new tweet</div>
-        <div><i class="fa-solid fa-angles-down"></i></div>
-      </div>
+      <button type="button" class="nav-right-side">Write a new tweet<br><i class="fa-solid fa-angles-down"></i></button>
     </nav>
 
     <!-- Profile header (should appear beside tweet feed on desktop, on top otherwise) -->
@@ -63,7 +60,7 @@
         <form action="/tweets" method="POST">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div>
-            <button type="submit">Tweet</button>
+            <button type="submit" class="submit-tweet">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>

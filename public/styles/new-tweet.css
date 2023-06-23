@@ -34,7 +34,7 @@ textarea:focus {
   outline: none;
 }
 
-button {
+button.submit-tweet {
   font-family: 'Bungee', sans-serif;
   border-width: 0px;
   background-color: #2e2e2e;

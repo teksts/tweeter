@@ -17,17 +17,15 @@ nav span {
   color: lime
 }
 
-nav div {
+nav button {
   font-size: 32px;
   margin-right: 1em;
   text-align: center;
-}
-
-.nav-right-side {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: inline-block;
   color:  #f4f1ec;
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: transparent;
+  border: none;
 }
 
 .nav-right-side:hover {
@@ -38,6 +36,9 @@ nav div {
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   nav {
+    background-color: #2e2e2e;
+  }
+  nav button {
     background-color: #2e2e2e;
   }
 }
