@@ -110,27 +110,26 @@ $(document).ready(function() {
     const emptyTweetMsg = "You forgot to write something!";
     const overLimitMsg = "Too wordy! Tweets have to be 140 characters or less.";
     // if error is showing, slide up banner (to be slid down again later pending validation)
-    if ($errorPopup.css("display") !== "none") {
-      $errorPopup.slideUp();
-    }
-    // block submission and display error if tweet empty
-    if (!formContent) {
-      renderError(emptyTweetMsg);
-    // block submission and display error if tweet too large
-    } else if (overLimit) {
-      renderError(overLimitMsg);
-    // tweet is valid, post to server and update tweet feed
-    } else {
-      $.ajax({
-        method: "POST",
-        url: "/tweets",
-        data
-      })
-      .then(() => {
-        this.reset();
-        loadTweets();
-        });
-    }
+    $errorPopup.slideUp(() => {
+      // block submission and display error if tweet empty
+      if (!formContent) {
+        renderError(emptyTweetMsg);
+      // block submission and display error if tweet too large
+      } else if (overLimit) {
+        renderError(overLimitMsg);
+      // tweet is valid, post to server and update tweet feed
+      } else {
+        $.ajax({
+          method: "POST",
+          url: "/tweets",
+          data
+        })
+          .then(() => {
+            this.reset();
+            loadTweets();
+          });
+      }
+    });
   });
 
 });
