@@ -77,6 +77,9 @@ $(document).ready(function() {
   // set flag marking if tweet feed has been loaded
   $("#tweets-container").data("loaded", false);
 
+  // Load intial tweet feed
+  loadTweets();
+
   // on-click handler for new tweet composer expansion
   $(".nav-right-side").on("click", function () {
     // initialize target DOM elements
@@ -109,7 +112,7 @@ $(document).ready(function() {
     const $errorPopup = $(this).parents("main").children(".invalid-tweet-error")
     const emptyTweetMsg = "You forgot to write something!";
     const overLimitMsg = "Too wordy! Tweets have to be 140 characters or less.";
-    // if error is showing, slide up banner (to be slid down again later pending validation)
+    // Run form validation inside slideUp() callback to ensure error message updates properly
     $errorPopup.slideUp(() => {
       // block submission and display error if tweet empty
       if (!formContent) {

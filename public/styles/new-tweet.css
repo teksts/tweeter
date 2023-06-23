@@ -1,6 +1,7 @@
 /* Default styles (mobile, tablet) */
 section.new-tweet {
   width: 85%;
+  max-width: 85%;
   border-style: outset;
   border-width: 20px;
   border-radius: 10px;

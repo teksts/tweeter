@@ -12,7 +12,7 @@ $(document).ready(function() {
       counter.data("overLimit", true);
     }
     // reset counter color of brought back under limit
-    if (counter.data("overLimit") === true && counter.val() > 0) {
+    if (counter.data("overLimit") === true && counter.val() >= 0) {
       counter.css("color", defaultColor);
       counter.data("overLimit", false);
     }
